@@ -30,14 +30,17 @@ def print_char_dict(file_contents):
         for key in mini_dict:
             print(f"The {key} charactert was found {mini_dict[key]} times")
 
-#takes in dict and return a sorted list of dict
+#takes in dict and return a sorted list of dicts
 def sort_dict(unsorted_dict):
     sorted_list = []
     unsorted_list = []
+
+    #convert dict to list of dicts
     for key in unsorted_dict:
         temp_dict = {key: unsorted_dict[key]}
         unsorted_list.append(temp_dict)
 
+    #remove non alphabet elements
     for item in unsorted_list:
         for key in item:
             if not key.isalpha():
@@ -59,15 +62,12 @@ def sort_dict(unsorted_dict):
         
         unsorted_list.remove(temp_mini_dict)
           
-        #append largets to sorted list
+        #append largest to sorted list
         temp_dict = {max_key: max_value}
         sorted_list.append(temp_dict)
 
         #repeat
     return sorted_list
-
-def sort_on():
-    pass
 
 def print_report(file_contents):
     print("--- Begin report of books/frankenstein.txt ---")
